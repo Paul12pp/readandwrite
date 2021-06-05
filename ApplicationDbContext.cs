@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace LeeryEscribir
 {
-    public partial class ApplicationDbContext : DbContext
+    public partial class ApplicationDbContext : DbContext, IDisposable
     {
         public ApplicationDbContext()
             : base("name=DbContext")
