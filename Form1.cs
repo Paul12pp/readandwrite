@@ -30,26 +30,61 @@ namespace LeeryEscribir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string pe=dtPeriodo.Value.ToString("ddMMyyyy");
-            string tr=dtTransm.Value.ToString("ddMMyyyy");
-            ApplicationDbContext db = new ApplicationDbContext();
-            var empleados = db.Empleados.ToList();
+            ApplicationDbContext dbContext = new ApplicationDbContext();
+            
+            var empleados = dbContext.Empleados.ToList();
 
             dataGridView1.DataSource = empleados;
-            using (StreamWriter outputFile = new StreamWriter(@"C:\Users\USER\Desktop\Clases APEC\Int propietaria\write.txt"))
+            using (StreamWriter outputFile = new StreamWriter(@"C:\Users\ec319981\Documents\Unapec\Propietaria\write.txt"))
             {
-                string firts = $"02{txtRnc.Text}{pe}{tr}";
-                outputFile.WriteLine(firts);
+                string fechaDePago = DateTime.Now.ToString("dd/MM/yyyy");
+                string cabecera = $"0210010001{fechaDePago}{fechaDePago}";
+                outputFile.WriteLine(cabecera);
+               
                 foreach (var item in empleados)
                 {
                     string sueldo = item.Sueldo.ToString();
                     sueldo = sueldo.Replace(",00", "");
-                    sueldo = sueldo.Length < 7 ? sueldo += new String(' ', 7 - sueldo.Length) : sueldo;
+                    sueldo = sueldo.Length < 7 ? sueldo += new string('0', 7 - sueldo.Length) : sueldo;
                     string line = $"02{item.Cedula}{sueldo}{item.Moneda}";
                     outputFile.WriteLine(line);
                 }
                 outputFile.WriteLine($"02{empleados.Count}");
             }
+        }
+
+        private void agregar_Click(object sender, EventArgs e)
+        {
+            Empleados empleado = new Empleados()
+            {
+                Cedula = documentoIdentidad.Text,
+                Moneda = RD.Checked ? "RD" : "USD",
+                Nombre = nombreEmpleado.Text,
+                Sueldo = sueldoBruto.Value
+            };
+            try
+            {
+                ApplicationDbContext dbContext = new ApplicationDbContext();
+                dbContext.Empleados.Add(empleado);
+                dbContext.SaveChanges();
+
+
+                dataGridView1.Update();
+                dataGridView1.Refresh();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'nominaDataSet.Empleados' table. You can move, or remove it, as needed.
+            this.empleadosTableAdapter.Fill(this.nominaDataSet.Empleados);
+
         }
     }
 }

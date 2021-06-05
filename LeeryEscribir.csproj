@@ -63,10 +63,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106050114103_pendingchanges.cs" />
+    <Compile Include="Migrations\202106050114103_pendingchanges.Designer.cs">
+      <DependentUpon>202106050114103_pendingchanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106050348142_updating Empleados.cs" />
+    <Compile Include="Migrations\202106050348142_updating Empleados.Designer.cs">
+      <DependentUpon>202106050348142_updating Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NominaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NominaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106050114103_pendingchanges.resx">
+      <DependentUpon>202106050114103_pendingchanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106050348142_updating Empleados.resx">
+      <DependentUpon>202106050348142_updating Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +97,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="NominaDataSet.xsc">
+      <DependentUpon>NominaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NominaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NominaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NominaDataSet.xss">
+      <DependentUpon>NominaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

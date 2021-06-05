@@ -14,10 +14,11 @@ namespace LeeryEscribir
         [StringLength(20)]
         public string Cedula { get; set; }
 
-        [Required]
+        
         [StringLength(50)]
         public string Nombre { get; set; }
 
+        [Required]
         [Column(TypeName = "numeric")]
         public decimal Sueldo { get; set; }
 
