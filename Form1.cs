@@ -38,7 +38,7 @@ namespace LeeryEscribir
             using (StreamWriter outputFile = new StreamWriter(@"C:\Users\ec319981\Documents\Unapec\Propietaria\write.txt"))
             {
                 string fechaDePago = DateTime.Now.ToString("dd/MM/yyyy");
-                string cabecera = $"0210010001{fechaDePago}{fechaDePago}";
+                string cabecera = $"02100100001{fechaDePago}{fechaDePago}";
                 outputFile.WriteLine(cabecera);
                
                 foreach (var item in empleados)
@@ -69,8 +69,8 @@ namespace LeeryEscribir
                 dbContext.SaveChanges();
 
 
-                dataGridView1.Update();
-                dataGridView1.Refresh();
+                 dataGridView1.Refresh();
+                        dataGridView1.DataSource = dbContext.Empleados.ToList();
             }
             catch (Exception)
             {
