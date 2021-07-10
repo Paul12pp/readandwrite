@@ -34,6 +34,13 @@ namespace LeeryEscribir
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sueldoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nominaDataSet = new LeeryEscribir.NominaDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,22 +49,16 @@ namespace LeeryEscribir
             this.RD = new System.Windows.Forms.RadioButton();
             this.USD = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.documentoIdentidad = new System.Windows.Forms.MaskedTextBox();
-            this.nombreEmpleado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.nominaDataSet = new LeeryEscribir.NominaDataSet();
-            this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreEmpleado = new System.Windows.Forms.TextBox();
+            this.documentoIdentidad = new System.Windows.Forms.MaskedTextBox();
             this.empleadosTableAdapter = new LeeryEscribir.NominaDataSetTableAdapters.EmpleadosTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sueldoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nominaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sueldoBruto)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nominaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dtTransm
@@ -104,6 +105,51 @@ namespace LeeryEscribir
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(542, 218);
             this.dataGridView1.TabIndex = 7;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sueldoDataGridViewTextBoxColumn
+            // 
+            this.sueldoDataGridViewTextBoxColumn.DataPropertyName = "Sueldo";
+            this.sueldoDataGridViewTextBoxColumn.HeaderText = "Sueldo";
+            this.sueldoDataGridViewTextBoxColumn.Name = "sueldoDataGridViewTextBoxColumn";
+            this.sueldoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // monedaDataGridViewTextBoxColumn
+            // 
+            this.monedaDataGridViewTextBoxColumn.DataPropertyName = "Moneda";
+            this.monedaDataGridViewTextBoxColumn.HeaderText = "Moneda";
+            this.monedaDataGridViewTextBoxColumn.Name = "monedaDataGridViewTextBoxColumn";
+            this.monedaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // empleadosBindingSource
+            // 
+            this.empleadosBindingSource.DataMember = "Empleados";
+            this.empleadosBindingSource.DataSource = this.nominaDataSet;
+            // 
+            // nominaDataSet
+            // 
+            this.nominaDataSet.DataSetName = "NominaDataSet";
+            this.nominaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -180,6 +226,7 @@ namespace LeeryEscribir
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.nombreEmpleado);
             this.groupBox1.Controls.Add(this.documentoIdentidad);
@@ -198,22 +245,6 @@ namespace LeeryEscribir
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Empleado";
             // 
-            // documentoIdentidad
-            // 
-            this.documentoIdentidad.Location = new System.Drawing.Point(96, 32);
-            this.documentoIdentidad.Mask = "000-0000000-0";
-            this.documentoIdentidad.Name = "documentoIdentidad";
-            this.documentoIdentidad.Size = new System.Drawing.Size(124, 20);
-            this.documentoIdentidad.TabIndex = 17;
-            this.documentoIdentidad.ValidatingType = typeof(int);
-            // 
-            // nombreEmpleado
-            // 
-            this.nombreEmpleado.Location = new System.Drawing.Point(97, 80);
-            this.nombreEmpleado.Name = "nombreEmpleado";
-            this.nombreEmpleado.Size = new System.Drawing.Size(124, 20);
-            this.nombreEmpleado.TabIndex = 18;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -223,50 +254,35 @@ namespace LeeryEscribir
             this.label5.TabIndex = 19;
             this.label5.Text = "Nombre";
             // 
-            // nominaDataSet
+            // nombreEmpleado
             // 
-            this.nominaDataSet.DataSetName = "NominaDataSet";
-            this.nominaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.nombreEmpleado.Location = new System.Drawing.Point(97, 80);
+            this.nombreEmpleado.Name = "nombreEmpleado";
+            this.nombreEmpleado.Size = new System.Drawing.Size(124, 20);
+            this.nombreEmpleado.TabIndex = 18;
             // 
-            // empleadosBindingSource
+            // documentoIdentidad
             // 
-            this.empleadosBindingSource.DataMember = "Empleados";
-            this.empleadosBindingSource.DataSource = this.nominaDataSet;
+            this.documentoIdentidad.Location = new System.Drawing.Point(96, 32);
+            this.documentoIdentidad.Mask = "000-0000000-0";
+            this.documentoIdentidad.Name = "documentoIdentidad";
+            this.documentoIdentidad.Size = new System.Drawing.Size(124, 20);
+            this.documentoIdentidad.TabIndex = 17;
+            this.documentoIdentidad.ValidatingType = typeof(int);
             // 
             // empleadosTableAdapter
             // 
             this.empleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // button2
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cedulaDataGridViewTextBoxColumn
-            // 
-            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // sueldoDataGridViewTextBoxColumn
-            // 
-            this.sueldoDataGridViewTextBoxColumn.DataPropertyName = "Sueldo";
-            this.sueldoDataGridViewTextBoxColumn.HeaderText = "Sueldo";
-            this.sueldoDataGridViewTextBoxColumn.Name = "sueldoDataGridViewTextBoxColumn";
-            // 
-            // monedaDataGridViewTextBoxColumn
-            // 
-            this.monedaDataGridViewTextBoxColumn.DataPropertyName = "Moneda";
-            this.monedaDataGridViewTextBoxColumn.HeaderText = "Moneda";
-            this.monedaDataGridViewTextBoxColumn.Name = "monedaDataGridViewTextBoxColumn";
+            this.button2.Location = new System.Drawing.Point(228, 213);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "getrequest()";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -281,11 +297,11 @@ namespace LeeryEscribir
             this.Text = "Nomina";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nominaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sueldoBruto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nominaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,6 +332,7 @@ namespace LeeryEscribir
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sueldoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn monedaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button2;
     }
 }
 

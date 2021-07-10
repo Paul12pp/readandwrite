@@ -20,7 +20,6 @@ C:\Users\ec319981\Source\Repos\readandwrite\bin\Debug\EntityFramework.dll
 C:\Users\ec319981\Source\Repos\readandwrite\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ec319981\Source\Repos\readandwrite\bin\Debug\EntityFramework.xml
 C:\Users\ec319981\Source\Repos\readandwrite\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\ec319981\Source\Repos\readandwrite\obj\Debug\LeeryEscribir.csprojAssemblyReference.cache
 C:\Users\ec319981\Source\Repos\readandwrite\obj\Debug\LeeryEscribir.Form1.resources
 C:\Users\ec319981\Source\Repos\readandwrite\obj\Debug\LeeryEscribir.Properties.Resources.resources
 C:\Users\ec319981\Source\Repos\readandwrite\obj\Debug\LeeryEscribir.csproj.GenerateResource.cache
@@ -30,3 +29,6 @@ C:\Users\ec319981\Source\Repos\readandwrite\obj\Debug\LeeryEscribir.exe
 C:\Users\ec319981\Source\Repos\readandwrite\obj\Debug\LeeryEscribir.pdb
 C:\Users\ec319981\Source\Repos\readandwrite\obj\Debug\LeeryEscribir.Migrations.pendingchanges.resources
 C:\Users\ec319981\Source\Repos\readandwrite\obj\Debug\LeeryEscribir.Migrations.updatingEmpleados.resources
+C:\Users\ec319981\source\repos\readandwrite\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ec319981\source\repos\readandwrite\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ec319981\source\repos\readandwrite\obj\Debug\LeeryEscribir.csproj.AssemblyReference.cache
